@@ -67,7 +67,7 @@ src/
 │   ├── +layout.svelte    # Header + Footer wrapper
 │   ├── +page.svelte      # Home page
 │   ├── about/
-│   ├── amenities/        # Amenities, property specs, suitable-for, connectivity
+│   ├── amenities/        # Amenities, property specs, suitable-for
 │   ├── api/
 │   │   └── contact/      # POST endpoint — proxies form data to Airtable
 │   ├── gallery/
@@ -80,9 +80,9 @@ src/
 
 - **Home** — Hero with gradient, stats bar, video tour, amenities preview, location highlight
 - **About** — About Ambika Real Estate
-- **Amenities** — Property amenities, specifications (floor area, heights, roads), suitable-for tags (IT, Pharma, Warehouse, etc.), and connectivity advantages
+- **Amenities** — Property amenities, specifications (floor area, heights, roads), suitable-for tags (IT, Pharma, Warehouse, etc.)
 - **Gallery** — Video walkthroughs + photo carousel
-- **Location** — Google Maps embed with "Open in Google Maps" button, nearby landmarks
+- **Location** — Google Maps embed with "Open in Google Maps" button, nearby landmarks, and connectivity advantages
 - **Contact** — Enquiry form with Airtable-backed submission, duplicate contact detection, and spinner/success/error states
 
 ## Brand Colors
@@ -96,6 +96,10 @@ src/
 The favicon uses the brand logo PNG (`static/favicon.png`).
 
 ## Changelog
+
+### 1.6.0
+- Moved Connectivity & Advantages section from amenities to location page
+- Added Nigdi Metro Station (17 Km) to Metro & Railway card
 
 ### 1.5.0
 - Added Horizon Industrial Park card to Connectivity & Advantages section

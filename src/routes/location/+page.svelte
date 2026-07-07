@@ -108,7 +108,7 @@
             { name: 'Hyundai Construction Equipment', dist: 'Nearby' },
             { name: 'Chakan MIDC', dist: 'Premium Zone' },
             { name: 'Major Highway Connectivity', dist: 'Easy Access' }
-          ] as landmark}
+          ] as landmark (landmark.name)}
             <div class="bg-white rounded-xl p-5 text-center border border-gray-100 hover:border-brand-200 transition-all duration-300">
               <p class="font-semibold text-gray-900 text-sm">{landmark.name}</p>
               <p class="text-xs text-brand-500 font-medium mt-1">{landmark.dist}</p>
@@ -117,6 +117,44 @@
         </div>
       </div>
     </ScrollReveal>
+
+    <ScrollReveal>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">Connectivity</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+          Connectivity &amp; <span class="text-brand-500">Advantages</span>
+        </h2>
+      </div>
+    </ScrollReveal>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {#each [
+        { icon: '✈️', title: 'Airports', details: ['Pune – 35 Km', 'Mumbai – 143.5 Km', 'Panvel (Navi Mumbai) – 103.6 Km'] },
+        { icon: '🚢', title: 'Sea Port', details: ['JNPT – Nhava Sheva, Navi Mumbai – 120 Km'] },
+        { icon: '🚇', title: 'Metro & Railway', details: ['Nigdi Metro Station – 17 Km', 'Pimpri Metro Station – 23 Km', 'Akurdi Railway Station – 18 Km'] },
+        { icon: '🛣️', title: 'Road Connectivity', details: ['Mumbai/Pune/Bangalore Expressway – 19 Km', 'Pune-Nashik Highway – 11 Km'] },
+        { icon: '🏭', title: 'Automobile Hub', details: ['Chakan – Skoda Auto VW, Mercedes, Mahindra, Bajaj', 'Pimpri Chinchwad – Tata Motors, Bajaj Auto, Force Motors', 'Talegaon – Hyundai New Plant'] },
+        { icon: '🌐', title: 'MNCs & IT Parks', details: ['Dell, Bridgestone, Hyundai Construction, Faurecia, Thyssenkrupp, Lear + Many More', 'IT Parks: Talawade & Hinjawadi (Pune)'] },
+        { icon: '🔬', title: 'Research & Exhibition', details: ['ACDRI – Chinchwad MIDC', 'ARAI – Chakan MIDC', 'PIECC – Moshi (PCMC)'] },
+        { icon: '🏭', title: 'Horizon Industrial Park', details: ['Blackstone Group\'s 1.4 Mn sq. ft. IGBC Platinum Certified Park in Chakan MIDC', 'Key Tenants: BENTELER Automotive, Volkswagen Group, Mercedes-Benz, Mahindra, Bajaj Auto, JCB + Many More', '45 Parks across 10 Indian Cities | 58 Mn sq. ft. Portfolio | 100+ Customers | 57% Fortune 500'] }
+      ] as item (item.title)}
+        <ScrollReveal>
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all duration-300 h-full">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0 w-11 h-11 flex items-center justify-center bg-brand-50 rounded-xl">{item.icon}</span>
+              <div class="min-w-0">
+                <h3 class="text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <ul class="space-y-1">
+                  {#each item.details as detail (detail)}
+                    <li class="text-sm text-gray-600 leading-relaxed">{detail}</li>
+                  {/each}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      {/each}
+    </div>
   </div>
 </section>
 
