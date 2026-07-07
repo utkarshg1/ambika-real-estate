@@ -18,7 +18,7 @@
           </div>
         </a>
         <p class="text-sm leading-relaxed text-gray-400 max-w-sm">
-          Premium commercial space available for lease in Chakan MIDC. Modern amenities,
+          Premium commercial space available for rent in Chakan MIDC. Modern amenities,
           strategic location, and professional environment for your business growth.
         </p>
       </div>

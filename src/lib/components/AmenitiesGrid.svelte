@@ -4,7 +4,7 @@
   const amenities = [
     {
       title: '1 Ton Capacity Lift',
-      description: 'Dedicated cargo lift for easy movement of goods and equipment across floors.',
+      description: 'Dedicated cargo lift for easy movement of goods and equipment across all 3 floors.',
       icon: '⬆️'
     },
     {
@@ -19,18 +19,18 @@
     },
     {
       title: 'Modern Architecture',
-      description: 'Contemporary design with premium finishes, large windows, and professional ambiance.',
+      description: 'Attractive elevation with ACP cladding & glass glazing, contemporary design with premium finishes and large windows.',
       icon: '🏛️'
+    },
+    {
+      title: 'Vastu Compliant',
+      description: 'The property is designed and constructed following Vastu principles for positive energy and harmony.',
+      icon: '🧭'
     },
     {
       title: 'Ample Parking',
       description: 'Designated parking space for employees and visitors with easy access.',
       icon: '🅿️'
-    },
-    {
-      title: '24/7 Security',
-      description: 'Round-the-clock security with CCTV surveillance and controlled access.',
-      icon: '🛡️'
     }
   ];
 

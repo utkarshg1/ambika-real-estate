@@ -1,6 +1,4 @@
 <script lang="ts">
-  const GOOGLE_SHEETS_URL = import.meta.env.PUBLIC_GOOGLE_SHEETS_URL || '';
-
   const countries = [
     { code: 'IN', dial: '+91', flag: '🇮🇳' },
     { code: 'US', dial: '+1', flag: '🇺🇸' },
@@ -27,6 +25,7 @@
   let message = $state('');
   let submitting = $state(false);
   let submitted = $state(false);
+  let duplicate = $state(false);
   let error = $state('');
 
   function validate() {
@@ -36,6 +35,13 @@
     if (contact.trim().length < 7) return 'Please enter a valid contact number';
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Please enter a valid email address';
     return '';
+  }
+
+  function reset() {
+    submitting = false;
+    submitted = false;
+    duplicate = false;
+    error = '';
   }
 
   async function handleSubmit(e: SubmitEvent) {
@@ -50,24 +56,28 @@
     error = '';
     submitting = true;
 
-    const formData = new URLSearchParams({
-      Name: name.trim(),
-      Company: company.trim(),
-      Contact: `${countryCode}-${contact.trim()}`,
-      Email: email.trim() || 'Not provided',
-      Message: message.trim() || 'Not provided',
-      Timestamp: new Date().toISOString()
-    });
-
     try {
-      if (GOOGLE_SHEETS_URL) {
-        await fetch(GOOGLE_SHEETS_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: formData.toString()
-        });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          company: company.trim(),
+          contact: `${countryCode}-${contact.trim()}`,
+          email: email.trim() || 'Not provided',
+          message: message.trim() || 'Not provided',
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.duplicate) {
+        duplicate = true;
+        return;
       }
+
+      if (!res.ok) throw new Error('Submission failed');
 
       submitted = true;
       name = '';
@@ -76,25 +86,58 @@
       email = '';
       message = '';
     } catch {
-      error = 'Something went wrong. Please try again or call us directly.';
+      error = 'Something went wrong. Please contact us directly.';
     } finally {
       submitting = false;
     }
   }
 </script>
 
-{#if submitted}
+{#if submitting}
+  <div class="text-center py-12 animate-fade-in">
+    <div class="inline-block w-10 h-10 border-4 border-brand-200 border-t-brand-500 rounded-full animate-spin mb-4"></div>
+    <p class="text-gray-500 text-sm">Sending your enquiry...</p>
+  </div>
+{:else if submitted}
   <div class="text-center py-6 animate-scale-in">
-    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-      <span class="text-2xl">✓</span>
+    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-3xl text-green-600 font-bold">✓</span>
     </div>
-    <h3 class="text-lg font-bold text-gray-900 mb-1">Thank You!</h3>
-    <p class="text-gray-500 text-sm mb-4">We have received your enquiry. We will get back to you shortly.</p>
+    <h3 class="text-lg font-bold text-gray-900 mb-2">Enquiry Submitted</h3>
+    <p class="text-gray-500 text-sm mb-5">We have received your enquiry. We will get back to you shortly.</p>
     <button
-      onclick={() => (submitted = false)}
+      onclick={reset}
       class="px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all text-sm"
     >
       Submit Another
+    </button>
+  </div>
+{:else if duplicate}
+  <div class="text-center py-6 animate-scale-in">
+    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-3xl text-amber-500 font-bold">!</span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 mb-2">Duplicate Contact</h3>
+    <p class="text-gray-500 text-sm mb-5">You have already submitted this form. We will get back to you shortly.</p>
+    <button
+      onclick={reset}
+      class="px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all text-sm"
+    >
+      Submit Another Enquiry
+    </button>
+  </div>
+{:else if error}
+  <div class="text-center py-6 animate-scale-in">
+    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-3xl text-red-500 font-bold">✕</span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 mb-2">Something went wrong</h3>
+    <p class="text-gray-500 text-sm mb-5">Please contact us directly at <a href="tel:+918408817093" class="text-brand-500 font-medium hover:underline">+91-8408817093</a> or <a href="mailto:amplchakan@gmail.com" class="text-brand-500 font-medium hover:underline">amplchakan@gmail.com</a></p>
+    <button
+      onclick={reset}
+      class="px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all text-sm"
+    >
+      Try Again
     </button>
   </div>
 {:else}
@@ -142,7 +185,7 @@
           bind:value={countryCode}
           class="w-[110px] shrink-0 px-2 py-2 rounded-xl border border-gray-200 focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20 transition-all outline-none text-sm bg-white"
         >
-          {#each countries as c}
+          {#each countries as c (c.code)}
             <option value={c.dial}>{c.flag} {c.dial}</option>
           {/each}
         </select>
@@ -188,7 +231,7 @@
       disabled={submitting}
       class="w-full px-5 py-2.5 bg-brand-500 hover:bg-brand-600 disabled:bg-brand-300 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-500/25 text-sm"
     >
-      {submitting ? 'Sending...' : 'Send Enquiry'}
+      Send Enquiry
     </button>
 
     <p class="text-xs text-gray-400 text-center">

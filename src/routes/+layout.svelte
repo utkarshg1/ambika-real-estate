@@ -12,7 +12,7 @@
 
 <svelte:head>
   <title>Ambika Real Estate | Premium Commercial Space in Chakan MIDC</title>
-  <meta name="description" content="3400 sq ft premium commercial space on 2nd floor available for lease in Chakan MIDC. Modern amenities including lift, power backup, and 100kVA substation." />
+  <meta name="description" content="3400 sq ft premium commercial space on 2nd floor available for rent in Chakan MIDC. Modern amenities including lift, power backup, and 100kVA substation." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
 </svelte:head>
