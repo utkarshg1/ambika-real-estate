@@ -24,18 +24,22 @@
     </ScrollReveal>
 
     <ScrollReveal>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
-        <YouTubePlayer
-          videoId="WPxrUGJySt8"
-          title="Quick Tour - Premium Commercial Space"
-          vertical
-          class="shadow-xl"
-        />
-        <YouTubePlayer
-          videoId="7vkUAOLeE7Y"
-          title="Full Walkthrough - 3400 Sq Ft Space"
-          class="shadow-xl"
-        />
+      <div class="flex flex-col items-center lg:grid lg:grid-cols-2 gap-6 mb-16">
+        <div class="w-full max-w-sm lg:max-w-none">
+          <YouTubePlayer
+            videoId="WPxrUGJySt8"
+            title="Quick Tour - Premium Commercial Space"
+            vertical
+            class="shadow-xl"
+          />
+        </div>
+        <div class="w-full">
+          <YouTubePlayer
+            videoId="7vkUAOLeE7Y"
+            title="Full Walkthrough - 3400 Sq Ft Space"
+            class="shadow-xl"
+          />
+        </div>
       </div>
     </ScrollReveal>
 
