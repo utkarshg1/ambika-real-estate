@@ -1,6 +1,5 @@
 <script lang="ts">
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import premiumPhoto from '$lib/assets/Premium Building Photo.jpeg';
 </script>
 
 <svelte:head>
@@ -24,12 +23,18 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
       <ScrollReveal>
-        <div class="relative">
-          <img
-            src={premiumPhoto}
-            alt="Building location"
-            class="w-full rounded-2xl shadow-xl aspect-[16/10] object-cover"
-          />
+        <div class="relative w-full rounded-2xl shadow-xl overflow-hidden aspect-[16/10]">
+          <iframe
+            src="https://www.google.com/maps?q=18.759779,73.7744366&output=embed&z=16"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="FPT Technical Center"
+            class="absolute inset-0 w-full h-full"
+          ></iframe>
         </div>
       </ScrollReveal>
 
@@ -50,9 +55,9 @@
               <div>
                 <p class="font-semibold text-gray-900 text-sm">Address</p>
                 <p class="text-sm text-gray-500">
-                  Premium Chakan MIDC, Near Horizon Industrial Park,<br />
-                  Near Hyundai Construction Equipment Pvt. Ltd.,<br />
-                  Maharashtra, India
+                  PAP -K31, Chakan Industrial Area, Plot No,<br />
+                  Phase-2, Sawardari, Chakan,<br />
+                  Maharashtra 410501
                 </p>
               </div>
             </div>
@@ -105,6 +110,26 @@
 </section>
 
 <section class="py-16 md:py-24 bg-gray-50">
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg shadow-gray-200/50 border border-gray-100 mb-16">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Find Us on Map</h2>
+        <div class="aspect-[21/9] bg-gray-100 rounded-xl overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps?q=PAP-K31+Chakan+Industrial+Area+Phase-2+Sawardari+Chakan+Maharashtra+410501&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Location map"
+            class="w-full h-full min-h-[300px]"
+          ></iframe>
+        </div>
+        <p class="text-xs text-gray-400 mt-3">
+          PAP -K31, Chakan Industrial Area, Phase-2, Sawardari, Chakan, Maharashtra 410501
+        </p>
+      </div>
+
   <div class="container-main text-center">
     <ScrollReveal>
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

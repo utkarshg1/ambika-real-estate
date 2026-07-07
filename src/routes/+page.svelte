@@ -3,6 +3,7 @@
   import StatsBar from '$lib/components/StatsBar.svelte';
   import AmenitiesGrid from '$lib/components/AmenitiesGrid.svelte';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+  import YouTubePlayer from '$lib/components/YouTubePlayer.svelte';
   import frontageBuilding from '$lib/assets/Frontage Building.jpeg';
   import eveningPhoto from '$lib/assets/Evening Photo.jpeg';
 </script>
@@ -14,6 +15,45 @@
 <Hero>
   <StatsBar />
 </Hero>
+
+<section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+  <div class="container-main">
+    <ScrollReveal>
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">Video Tour</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+          See the <span class="text-brand-500">Space</span> in Action
+        </h2>
+        <p class="text-gray-500 text-lg leading-relaxed">
+          Take a quick visual walkthrough of our premium commercial space and experience the professional environment firsthand.
+        </p>
+      </div>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <div class="max-w-4xl mx-auto">
+        <YouTubePlayer
+          videoId="WPxrUGJySt8"
+          title="Ambika Real Estate - Premium Commercial Space Tour"
+          vertical
+          class="shadow-2xl shadow-brand-500/10"
+        />
+      </div>
+    </ScrollReveal>
+
+    <ScrollReveal>
+      <div class="text-center mt-6">
+        <a
+          href="/gallery"
+          class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 font-semibold transition-colors"
+        >
+          View All Photos & Videos
+          <span class="text-lg">→</span>
+        </a>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
 
 <section class="py-16 md:py-24 bg-white">
   <div class="container-main">

@@ -7,6 +7,7 @@
     { value: 3400, suffix: 'sq ft', label: 'Premium Space', icon: '📐' },
     { value: 2, suffix: 'nd Floor', label: 'Floor Level', icon: '🏢' },
     { value: 1, suffix: 'Ton Lift', label: 'Cargo Lift', icon: '⬆️' },
+    { value: 1, suffix: '', label: 'Generator Backup', icon: '🔋' },
     { value: 100, suffix: 'kVA', label: 'Substation', icon: '⚡' }
   ];
 
@@ -33,7 +34,7 @@
     if (!visible || counted) return;
     counted = true;
 
-    const durations = [2000, 1500, 1200, 1800];
+    const durations = [2000, 1500, 1200, 1000, 1800];
 
     stats.forEach((stat, i) => {
       const start = performance.now();
@@ -57,7 +58,7 @@
 
 <div
   bind:this={ref}
-  class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-8"
 >
   {#each stats as stat, i}
     <div

@@ -1,42 +1,75 @@
-# sv
+# Ambika Real Estate
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Premium commercial space website for Ambika Real Estate — a 3400 sq ft property on the 2nd floor available for lease in Chakan MIDC.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework**: Svelte 5 (runes mode) + SvelteKit
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Font**: Inter (self-hosted via `@fontsource/inter`)
+- **Adapter**: `@sveltejs/adapter-vercel`
+
+## Getting Started
 
 ```sh
-# create a new project
-npx sv create my-app
+npm install
+cp .env.example .env
 ```
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.16.2 create --template minimal --types ts --add prettier tailwindcss="plugins:typography,forms" mcp="ide:opencode" sveltekit-adapter="adapter:vercel" --install npm ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Set `PUBLIC_GOOGLE_SHEETS_URL` in `.env` (see Google Sheets setup below).
 
 ```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Build
 
 ```sh
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Google Sheets Integration
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The contact form submits enquiries to Google Sheets via a no-cors POST:
+
+1. Create a Google Sheet with columns: `Timestamp`, `Name`, `Company`, `Contact`, `Email`, `Message`
+2. Open **Extensions → Apps Script**
+3. Paste the contents of `GoogleSheets_AppScript.gs`
+4. Deploy → **New deployment** → Type: **Web app**
+5. Set **Execute as**: `Me`, **Who has access**: `Anyone`
+6. Copy the web app URL and set it as `PUBLIC_GOOGLE_SHEETS_URL` in `.env`
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── assets/           # Images
+│   └── components/       # Hero, StatsBar, AutoCarousel, YouTubePlayer, ContactForm, etc.
+├── routes/
+│   ├── +layout.svelte    # Header + Footer wrapper
+│   ├── +page.svelte      # Home page
+│   ├── about/
+│   ├── amenities/
+│   ├── gallery/
+│   ├── location/
+│   └── contact/
+└── app.html
+```
+
+## Pages
+
+- **Home** — Hero with gradient, stats bar, video tour, amenities preview, location highlight
+- **About** — About Ambika Real Estate
+- **Amenities** — All property amenities
+- **Gallery** — Video walkthroughs + photo carousel
+- **Location** — Google Maps embed, nearby landmarks
+- **Contact** — Enquiry form + contact details (no-scroll layout)
+
+## Brand Colors
+
+- Orange `#FFA500` (primary / `brand-500`)
+- Blue `#38B6FF` (secondary / `primary-500`)
+- Gold `#FECF67` (accent / `accent-500`)

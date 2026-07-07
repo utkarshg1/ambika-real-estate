@@ -71,9 +71,9 @@
           <li>
             <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Address</p>
             <p class="text-sm text-gray-400">
-              Premium Chakan MIDC,<br />
-              Near Horizon Industrial Park,<br />
-              Maharashtra
+              PAP -K31, Chakan Industrial Area,<br />
+              Phase-2, Sawardari, Chakan,<br />
+              Maharashtra 410501
             </p>
           </li>
         </ul>

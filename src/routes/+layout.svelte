@@ -1,13 +1,13 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import './layout.css';
   import '../app.css';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  let { children, url }: {
-    children: import('svelte').Snippet;
-    url: URL;
-  } = $props();
+  let { children }: { children: import('svelte').Snippet } = $props();
+
+  let currentPath = $derived($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -17,7 +17,7 @@
   <link rel="icon" href="/favicon.svg" />
 </svelte:head>
 
-<Header currentPath={url.pathname} />
+<Header currentPath={currentPath} />
 
 <main class="min-h-screen">
   {@render children()}

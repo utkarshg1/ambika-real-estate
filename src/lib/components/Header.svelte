@@ -6,31 +6,18 @@
     { href: '/about', label: 'About' },
     { href: '/amenities', label: 'Amenities' },
     { href: '/gallery', label: 'Gallery' },
-    { href: '/location', label: 'Location' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/location', label: 'Location' }
   ];
 
   let mobileOpen = $state(false);
-  let scrolled = $state(false);
   let { currentPath = '/' }: { currentPath?: string } = $props();
-
-  $effect(() => {
-    const onScroll = () => {
-      scrolled = window.scrollY > 20;
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  });
 
   function isActive(href: string) {
     if (href === '/') return currentPath === '/';
     return currentPath.startsWith(href);
   }
 
-  let navClass = $derived(
-    `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`
-  );
+  let navClass = 'fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm';
 
   let mobileMenuClass = $derived(
     `lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-96 shadow-lg' : 'max-h-0'}`
