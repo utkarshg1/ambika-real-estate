@@ -94,3 +94,22 @@ src/
 ## Favicon
 
 The favicon uses the brand logo PNG (`static/favicon.png`).
+
+## Changelog
+
+### 1.5.0
+- Added Horizon Industrial Park card to Connectivity & Advantages section
+- Added "Created by Utkarsh Gaikwad" credit in header
+- Added "India's largest industrial hub" tagline in hero and home page
+
+### 1.4.0
+- Replaced "lease" with "rent" across all pages
+- Added brochure content (property features, suitable for, connectivity) to amenities page
+- Removed 24/7 Security amenity card
+- Added duplicate contact detection to contact form
+- Added spinner, success, and error states to contact form
+- Clarified 2nd floor (3,400 sq ft) availability
+
+---
+
+**Created by Utkarsh Gaikwad**

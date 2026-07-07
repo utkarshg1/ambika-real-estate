@@ -26,13 +26,17 @@
 
 <nav class={navClass}>
   <div class="container-main flex items-center justify-between h-16 md:h-20">
-    <a href="/" class="flex items-center group">
+    <a href="/" class="flex items-center group gap-2 md:gap-3">
       <div class="overflow-hidden rounded-lg h-14 w-14 md:h-16 md:w-16">
         <img
           src={ambikaLogo}
           alt="Ambika Real Estate"
           class="h-full w-full object-cover object-top scale-[2.2] transition-transform duration-300 group-hover:scale-[2.5]"
         />
+      </div>
+      <div class="flex flex-col leading-tight">
+        <span class="text-sm md:text-base font-semibold text-gray-900">Ambika Real Estate</span>
+        <span class="text-[10px] md:text-xs text-gray-400">Created by Utkarsh Gaikwad</span>
       </div>
     </a>
 

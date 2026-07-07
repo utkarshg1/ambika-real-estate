@@ -30,7 +30,7 @@
       </h1>
 
       <p class="mt-4 text-lg md:text-xl text-white/90 max-w-xl leading-relaxed animate-fade-in-up animation-delay-100" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">
-        Premium 3400 sq ft commercial space on the 2nd floor available for rent in the heart of Chakan MIDC.
+        Premium 3400 sq ft commercial space on the 2nd floor available for rent in the heart of Chakan MIDC — India's largest industrial hub.
       </p>
 
       <p class="mt-3 text-base md:text-lg font-semibold text-amber-300 animate-fade-in-up animation-delay-150" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">

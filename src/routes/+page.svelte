@@ -64,7 +64,7 @@
           Premium Commercial Space for Your Business
         </h2>
         <p class="text-gray-500 text-lg leading-relaxed">
-          Located in the heart of Chakan MIDC, our property offers the perfect environment for your business to thrive.
+          Located in the heart of Chakan MIDC — India's largest industrial hub — our property offers the perfect environment for your business to thrive.
           Modern amenities, strategic location, and professional infrastructure.
         </p>
       </div>
