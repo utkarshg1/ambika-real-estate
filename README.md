@@ -97,6 +97,14 @@ The favicon uses the brand logo PNG (`static/favicon.png`).
 
 ## Changelog
 
+### 1.7.0
+- Redesigned hero section: full-width multi-column layout with dynamic column ratios (70/15/15, 60/15/25, 80/20)
+- Added Premium Building Photo and Evening Photo to hero section
+- Expanded text content and description to full width
+- StatsBar grid spreads 6 cards across full width on desktop with larger padding
+- Removed min-height constraint — hero shrinks to fit content
+- Optimized image sizing with `object-contain` and responsive aspect ratios
+
 ### 1.6.0
 - Moved Connectivity & Advantages section from amenities to location page
 - Added Nigdi Metro Station (17 Km) to Metro & Railway card

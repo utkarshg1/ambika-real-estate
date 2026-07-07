@@ -1,8 +1,11 @@
 <script lang="ts">
+  import premiumBuilding from '$lib/assets/Premium Building Photo.jpeg';
+  import eveningPhoto from '$lib/assets/Evening Photo.jpeg';
+
   let { children }: { children: import('svelte').Snippet } = $props();
 </script>
 
-<section class="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden">
+<section class="relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-500 to-primary-600">
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/5 to-transparent"></div>
@@ -13,8 +16,8 @@
   </div>
 
   <div class="relative z-10 px-4 md:px-8 pt-24 md:pt-32 pb-16 md:pb-24">
-    <div class="pb-8 md:pb-12">
-      <div class="max-w-5xl">
+      <div class="pb-8 md:pb-12 lg:flex lg:items-center lg:gap-4">
+      <div class="max-w-5xl lg:max-w-none lg:flex-[6]">
         <div class="flex flex-wrap items-center gap-2 mb-5 animate-fade-in">
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400/20 backdrop-blur-md rounded-full text-amber-300 text-xs font-semibold uppercase tracking-wider border border-amber-400/20">
             <span class="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
@@ -58,6 +61,21 @@
             View Gallery
           </a>
         </div>
+      </div>
+
+      <div class="lg:flex-[1.5] mt-8 lg:mt-0 animate-fade-in animation-delay-150">
+        <img
+          src={premiumBuilding}
+          alt="Premium Commercial Building"
+          class="w-full aspect-[9/16] object-contain rounded-xl shadow-lg ring-1 ring-white/10"
+        />
+      </div>
+      <div class="lg:flex-[2.5] mt-6 lg:mt-0 animate-fade-in animation-delay-200">
+        <img
+          src={eveningPhoto}
+          alt="Evening view of the building"
+          class="w-full rounded-xl shadow-lg ring-1 ring-white/10"
+        />
       </div>
     </div>
 
