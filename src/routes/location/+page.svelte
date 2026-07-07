@@ -22,7 +22,18 @@
     </ScrollReveal>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-      <ScrollReveal>
+      <div class="space-y-4 text-center">
+        <a
+          href="https://maps.app.goo.gl/Tger4GvNkAAs2qFs6"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mx-auto px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+          Open in Google Maps
+        </a>
         <div class="relative w-full rounded-2xl shadow-xl overflow-hidden aspect-[16/10]">
           <iframe
             src="https://www.google.com/maps?q=18.759779,73.7744366&output=embed&z=16"
@@ -36,7 +47,7 @@
             class="absolute inset-0 w-full h-full"
           ></iframe>
         </div>
-      </ScrollReveal>
+      </div>
 
       <ScrollReveal>
         <div class="space-y-6">
@@ -49,7 +60,7 @@
             Hyundai Construction Equipment Pvt. Ltd., your business will thrive in this ecosystem.
           </p>
 
-          <div class="space-y-4">
+<div class="space-y-4 text-center">
             <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
               <span class="text-xl flex-shrink-0">📍</span>
               <div>
@@ -109,41 +120,3 @@
   </div>
 </section>
 
-<section class="py-16 md:py-24 bg-gray-50">
-      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg shadow-gray-200/50 border border-gray-100 mb-16">
-        <h2 class="text-xl font-bold text-gray-900 mb-4">Find Us on Map</h2>
-        <div class="aspect-[21/9] bg-gray-100 rounded-xl overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps?q=PAP-K31+Chakan+Industrial+Area+Phase-2+Sawardari+Chakan+Maharashtra+410501&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Location map"
-            class="w-full h-full min-h-[300px]"
-          ></iframe>
-        </div>
-        <p class="text-xs text-gray-400 mt-3">
-          PAP -K31, Chakan Industrial Area, Phase-2, Sawardari, Chakan, Maharashtra 410501
-        </p>
-      </div>
-
-  <div class="container-main text-center">
-    <ScrollReveal>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Want to See the Space?
-      </h2>
-      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto">
-        Schedule a visit and experience the premium environment yourself.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5"
-      >
-        Schedule a Visit
-      </a>
-    </ScrollReveal>
-  </div>
-</section>

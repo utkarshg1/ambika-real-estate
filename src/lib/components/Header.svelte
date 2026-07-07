@@ -26,15 +26,13 @@
 
 <nav class={navClass}>
   <div class="container-main flex items-center justify-between h-16 md:h-20">
-    <a href="/" class="flex items-center gap-3 group">
-      <img
-        src={ambikaLogo}
-        alt="Ambika Real Estate"
-        class="h-10 w-10 md:h-12 md:w-12 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
-      />
-      <div class="hidden sm:block">
-        <span class="text-lg md:text-xl font-bold text-gray-900 tracking-tight">Ambika</span>
-        <span class="text-lg md:text-xl font-bold text-brand-500 tracking-tight"> Real Estate</span>
+    <a href="/" class="flex items-center group">
+      <div class="overflow-hidden rounded-lg h-14 w-14 md:h-16 md:w-16">
+        <img
+          src={ambikaLogo}
+          alt="Ambika Real Estate"
+          class="h-full w-full object-cover object-top scale-[2.2] transition-transform duration-300 group-hover:scale-[2.5]"
+        />
       </div>
     </a>
 

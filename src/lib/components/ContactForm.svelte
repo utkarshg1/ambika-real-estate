@@ -1,9 +1,28 @@
 <script lang="ts">
   const GOOGLE_SHEETS_URL = import.meta.env.PUBLIC_GOOGLE_SHEETS_URL || '';
 
+  const countries = [
+    { code: 'IN', dial: '+91', flag: '🇮🇳' },
+    { code: 'US', dial: '+1', flag: '🇺🇸' },
+    { code: 'GB', dial: '+44', flag: '🇬🇧' },
+    { code: 'CA', dial: '+1', flag: '🇨🇦' },
+    { code: 'AU', dial: '+61', flag: '🇦🇺' },
+    { code: 'AE', dial: '+971', flag: '🇦🇪' },
+    { code: 'SA', dial: '+966', flag: '🇸🇦' },
+    { code: 'SG', dial: '+65', flag: '🇸🇬' },
+    { code: 'MY', dial: '+60', flag: '🇲🇾' },
+    { code: 'CN', dial: '+86', flag: '🇨🇳' },
+    { code: 'JP', dial: '+81', flag: '🇯🇵' },
+    { code: 'KR', dial: '+82', flag: '🇰🇷' },
+    { code: 'DE', dial: '+49', flag: '🇩🇪' },
+    { code: 'FR', dial: '+33', flag: '🇫🇷' },
+    { code: 'IT', dial: '+39', flag: '🇮🇹' },
+  ];
+
   let name = $state('');
   let company = $state('');
   let contact = $state('');
+  let countryCode = $state('+91');
   let email = $state('');
   let message = $state('');
   let submitting = $state(false);
@@ -14,7 +33,7 @@
     if (!name.trim()) return 'Please enter your name';
     if (!company.trim()) return 'Please enter your company name';
     if (!contact.trim()) return 'Please enter your contact number';
-    if (contact.trim().length < 10) return 'Please enter a valid contact number';
+    if (contact.trim().length < 7) return 'Please enter a valid contact number';
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Please enter a valid email address';
     return '';
   }
@@ -34,7 +53,7 @@
     const formData = new URLSearchParams({
       Name: name.trim(),
       Company: company.trim(),
-      Contact: contact.trim(),
+      Contact: `${countryCode}-${contact.trim()}`,
       Email: email.trim() || 'Not provided',
       Message: message.trim() || 'Not provided',
       Timestamp: new Date().toISOString()
@@ -118,14 +137,24 @@
       <label for="contact" class="block text-xs font-medium text-gray-700 mb-1">
         Contact Number <span class="text-red-500">*</span>
       </label>
-      <input
-        id="contact"
-        type="tel"
-        bind:value={contact}
-        placeholder="+91-XXXXXXXXXX"
-        class="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20 transition-all outline-none text-sm"
-        required
-      />
+      <div class="flex gap-2">
+        <select
+          bind:value={countryCode}
+          class="w-[110px] shrink-0 px-2 py-2 rounded-xl border border-gray-200 focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20 transition-all outline-none text-sm bg-white"
+        >
+          {#each countries as c}
+            <option value={c.dial}>{c.flag} {c.dial}</option>
+          {/each}
+        </select>
+        <input
+          id="contact"
+          type="tel"
+          bind:value={contact}
+          placeholder="XXXXXXXXXX"
+          class="flex-1 px-3 py-2 rounded-xl border border-gray-200 focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20 transition-all outline-none text-sm"
+          required
+        />
+      </div>
     </div>
 
     <div>

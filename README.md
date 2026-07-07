@@ -47,7 +47,7 @@ The contact form submits enquiries to Google Sheets via a no-cors POST:
 src/
 ├── lib/
 │   ├── assets/           # Images
-│   └── components/       # Hero, StatsBar, AutoCarousel, YouTubePlayer, ContactForm, etc.
+│   └── components/       # Header, Hero, StatsBar, AutoCarousel, YouTubePlayer, ContactForm, etc.
 ├── routes/
 │   ├── +layout.svelte    # Header + Footer wrapper
 │   ├── +page.svelte      # Home page
@@ -65,11 +65,15 @@ src/
 - **About** — About Ambika Real Estate
 - **Amenities** — All property amenities
 - **Gallery** — Video walkthroughs + photo carousel
-- **Location** — Google Maps embed, nearby landmarks
-- **Contact** — Enquiry form + contact details (no-scroll layout)
+- **Location** — Google Maps embed with "Open in Google Maps" button, nearby landmarks
+- **Contact** — Enquiry form with country code dropdown + contact details (no-scroll layout)
 
 ## Brand Colors
 
 - Orange `#FFA500` (primary / `brand-500`)
 - Blue `#38B6FF` (secondary / `primary-500`)
 - Gold `#FECF67` (accent / `accent-500`)
+
+## Favicon
+
+The favicon uses the brand logo PNG (`static/favicon.png`).

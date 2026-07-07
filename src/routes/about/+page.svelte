@@ -1,6 +1,5 @@
 <script lang="ts">
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import premiumPhoto from '$lib/assets/Premium Building Photo.jpeg';
   import frontageBuilding from '$lib/assets/Frontage Building.jpeg';
   import ambikaLogo from '$lib/assets/ambika_logo.png';
 </script>
@@ -29,9 +28,9 @@
       <ScrollReveal>
         <div class="relative">
           <img
-            src={premiumPhoto}
-            alt="Premium commercial building"
-            class="w-full rounded-2xl shadow-xl aspect-[16/10] object-cover"
+            src={frontageBuilding}
+            alt="Frontage Building"
+            class="w-full rounded-2xl shadow-xl aspect-[16/10] object-contain bg-gray-100"
           />
           <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-500 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg hidden md:flex">
             Est. 2024
