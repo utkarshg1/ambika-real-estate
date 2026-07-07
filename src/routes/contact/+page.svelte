@@ -8,8 +8,8 @@
   <meta name="description" content="Contact Ambika Real Estate for premium commercial space in Chakan MIDC. Call +91-8408817093 or email amplchakan@gmail.com." />
 </svelte:head>
 
-<section class="h-dvh pt-16 md:pt-20 overflow-hidden bg-white">
-  <div class="container-main h-full flex flex-col">
+<section class="lg:h-dvh pt-16 md:pt-20 lg:overflow-hidden bg-white">
+  <div class="container-main lg:h-full lg:flex lg:flex-col">
     <ScrollReveal>
       <div class="py-2 md:py-3">
         <span class="text-brand-500 font-semibold text-xs uppercase tracking-wider">Contact</span>
@@ -17,8 +17,8 @@
       </div>
     </ScrollReveal>
 
-    <div class="flex-1 grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6 overflow-hidden pb-2 md:pb-4">
-      <div class="lg:col-span-3 overflow-y-auto">
+    <div class="lg:flex-1 grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6 lg:overflow-hidden pb-2 md:pb-4">
+      <div class="lg:col-span-3 lg:overflow-y-auto">
         <ScrollReveal>
           <div class="bg-white rounded-2xl p-4 md:p-5 shadow-lg shadow-gray-200/50 border border-gray-100">
             <h2 class="text-sm font-bold text-gray-900 mb-3">Send us an Enquiry</h2>
@@ -27,7 +27,7 @@
         </ScrollReveal>
       </div>
 
-      <div class="lg:col-span-2 space-y-3 md:space-y-4 overflow-y-auto">
+      <div class="lg:col-span-2 space-y-3 md:space-y-4 lg:overflow-y-auto">
         <ScrollReveal>
           <div class="bg-gray-50 rounded-2xl p-4 md:p-5 border border-gray-100">
             <h3 class="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-3">Contact Information</h3>

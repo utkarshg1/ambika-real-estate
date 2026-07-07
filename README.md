@@ -1,5 +1,7 @@
 # Ambika Real Estate
 
+**Website**: [ambika-real-estate.vercel.app](https://ambika-real-estate.vercel.app/)
+
 Premium commercial space website for Ambika Real Estate — a 10,500 sq ft G+2 building on a corner plot in Chakan MIDC. 2nd floor of 3,400 sq ft available for rent.
 
 ## Tech Stack
@@ -96,6 +98,9 @@ src/
 The favicon uses the brand logo PNG (`static/favicon.png`).
 
 ## Changelog
+
+### 1.8.0
+- Mobile contact page: replaced dual internal scroll areas with continuous page-level scroll for smoother UX
 
 ### 1.7.0
 - Redesigned hero section: full-width multi-column layout with dynamic column ratios (70/15/15, 60/15/25, 80/20)
