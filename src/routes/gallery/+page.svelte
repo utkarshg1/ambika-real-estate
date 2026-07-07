@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AutoCarousel from '$lib/components/AutoCarousel.svelte';
+  import PhotoGallery from '$lib/components/PhotoGallery.svelte';
   import YouTubePlayer from '$lib/components/YouTubePlayer.svelte';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
 </script>
@@ -48,12 +48,12 @@
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
           Photo <span class="text-brand-500">Gallery</span>
         </h2>
-        <p class="text-gray-500 mt-2">Browse through our property photos using the arrows or swipe on mobile.</p>
+        <p class="text-gray-500 mt-2">Click on any photo to view it in full size.</p>
       </div>
     </ScrollReveal>
 
     <ScrollReveal>
-      <AutoCarousel />
+      <PhotoGallery />
     </ScrollReveal>
   </div>
 </section>
