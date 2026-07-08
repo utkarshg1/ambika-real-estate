@@ -21,7 +21,7 @@
       </div>
     </ScrollReveal>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20">
       <div class="space-y-4 text-center">
         <a
           href="https://maps.app.goo.gl/Tger4GvNkAAs2qFs6"
@@ -50,47 +50,41 @@
       </div>
 
       <ScrollReveal>
-        <div class="space-y-6">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-            Strategic <span class="text-brand-500">Location</span>
-          </h2>
-          <p class="text-gray-500 leading-relaxed">
-            Our property is situated in the Premium Chakan MIDC, offering excellent connectivity
-            and proximity to major industrial players. Located near Horizon Industrial Park and
-            Hyundai Construction Equipment Pvt. Ltd., your business will thrive in this ecosystem.
-          </p>
+        <div class="flex flex-col h-full">
 
-<div class="space-y-4 text-center">
-            <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-              <span class="text-xl flex-shrink-0">📍</span>
-              <div>
-                <p class="font-semibold text-gray-900 text-sm">Address</p>
-                <p class="text-sm text-gray-500">
-                  PAP -K31, Chakan Industrial Area, Plot No,<br />
-                  Phase-2, Sawardari, Chakan,<br />
-                  Maharashtra 410501
+          <div class="flex-1 flex flex-col justify-center space-y-4 text-center">
+            <div class="flex flex-col items-center p-6 bg-gray-50 rounded-xl">
+              <div class="flex items-center gap-1.5">
+                <span class="text-base">📍</span>
+                <p class="font-semibold text-gray-900 text-sm leading-relaxed">Address</p>
+              </div>
+              <div class="w-full text-left mt-2">
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  PAP -K31, Chakan Industrial Area, Plot No, Phase-2, Sawardari, Chakan, Maharashtra 410501
                 </p>
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-4 bg-brand-50 rounded-xl">
-              <span class="text-xl flex-shrink-0">🏭</span>
-              <div>
-                <p class="font-semibold text-gray-900 text-sm">Area Highlights</p>
-                <p class="text-sm text-gray-500">
-                  Thriving industrial corridor with excellent infrastructure,<br />
-                  major corporate presence, and growth potential.
+            <div class="flex flex-col items-center p-6 bg-brand-50 rounded-xl">
+              <div class="flex items-center gap-1.5">
+                <span class="text-base">🏭</span>
+                <p class="font-semibold text-gray-900 text-sm leading-relaxed">Area Highlights</p>
+              </div>
+              <div class="w-full text-left mt-2">
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Thriving industrial corridor with excellent infrastructure, major corporate presence, and growth potential.
                 </p>
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-4 bg-primary-50 rounded-xl">
-              <span class="text-xl flex-shrink-0">🚗</span>
-              <div>
-                <p class="font-semibold text-gray-900 text-sm">Accessibility</p>
-                <p class="text-sm text-gray-500">
-                  Well-connected by road, close to major highways and<br />
-                  public transport for easy employee commute.
+            <div class="flex flex-col items-center p-6 bg-primary-50 rounded-xl">
+              <div class="flex items-center gap-1.5">
+                <span class="text-base">🚗</span>
+                <p class="font-semibold text-gray-900 text-sm leading-relaxed">Accessibility</p>
+              </div>
+              <div class="w-full text-left mt-2">
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Well-connected by road, close to major highways and public transport for easy employee commute.
                 </p>
               </div>
             </div>

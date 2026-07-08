@@ -84,7 +84,7 @@ src/
 - **About** — About Ambika Real Estate
 - **Amenities** — Property amenities, specifications (floor area, heights, roads), suitable-for tags (IT, Pharma, Warehouse, etc.)
 - **Gallery** — Video walkthroughs + photo carousel
-- **Location** — Google Maps embed with "Open in Google Maps" button, nearby landmarks, and connectivity advantages
+- **Location** — Google Maps embed with Address, Area Highlights, and Accessibility info cards, nearby landmarks, and connectivity advantages
 - **Contact** — Enquiry form with Airtable-backed submission, duplicate contact detection, and spinner/success/error states
 
 ## Brand Colors
@@ -98,6 +98,12 @@ src/
 The favicon uses the brand logo PNG (`static/favicon.png`).
 
 ## Changelog
+
+### 1.9.0
+- Location page: redesigned information cards (Address, Area Highlights, Accessibility) with centered layout, inline emoji, and improved typography
+- Removed redundant "Strategic Location" heading — content now sits directly below the page title
+- Cards now stretch to match map height for a balanced layout
+- Removed hardcoded line breaks; cleaned up address formatting
 
 ### 1.8.0
 - Mobile contact page: replaced dual internal scroll areas with continuous page-level scroll for smoother UX
