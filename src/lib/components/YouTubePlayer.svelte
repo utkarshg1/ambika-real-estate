@@ -19,7 +19,7 @@
   let embedUrl = $derived(`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&rel=0&modestbranding=1`);
 </script>
 
-<div class="relative rounded-2xl overflow-hidden bg-gray-900 ring-2 ring-brand-500 {className} {aspectClass}">
+<div class="relative rounded-2xl overflow-hidden bg-gray-900 {className} {aspectClass}">
   {#if playing}
     <iframe
       src={embedUrl}
