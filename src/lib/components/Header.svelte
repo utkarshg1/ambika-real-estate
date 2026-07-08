@@ -35,7 +35,7 @@
         />
       </div>
       <div class="flex flex-col leading-tight">
-        <span class="text-sm md:text-base font-semibold text-gray-900">Ambika Real Estate</span>
+        <span class="text-sm md:text-base font-semibold"><span class="text-brand-500">Ambika</span> <span class="text-primary-500">Real Estate</span></span>
         <span class="text-[10px] md:text-xs text-gray-400">Created by Utkarsh Gaikwad</span>
       </div>
     </a>
