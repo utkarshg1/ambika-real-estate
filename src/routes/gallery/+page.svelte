@@ -2,6 +2,7 @@
   import PhotoGallery from '$lib/components/PhotoGallery.svelte';
   import YouTubePlayer from '$lib/components/YouTubePlayer.svelte';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+  import premiumBuilding from '$lib/assets/Premium Building Photo.jpeg';
 </script>
 
 <svelte:head>
@@ -30,6 +31,7 @@
             videoId="WPxrUGJySt8"
             title="Quick Tour - Premium Commercial Space"
             vertical
+            thumbnailSrc={premiumBuilding}
             class="shadow-xl"
           />
         </div>

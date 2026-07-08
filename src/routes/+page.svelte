@@ -6,6 +6,7 @@
   import YouTubePlayer from '$lib/components/YouTubePlayer.svelte';
   import frontageBuilding from '$lib/assets/Frontage Building.jpeg';
   import eveningPhoto from '$lib/assets/Evening Photo.jpeg';
+  import premiumBuilding from '$lib/assets/Premium Building Photo.jpeg';
 </script>
 
 <svelte:head>
@@ -36,6 +37,7 @@
           videoId="WPxrUGJySt8"
           title="Ambika Real Estate - Premium Commercial Space Tour"
           vertical
+          thumbnailSrc={premiumBuilding}
           class="shadow-2xl shadow-brand-500/10"
         />
       </div>

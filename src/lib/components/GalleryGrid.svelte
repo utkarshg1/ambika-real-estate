@@ -66,7 +66,7 @@
   {#each images as image, i (image.src)}
     <button
       onclick={() => openLightbox(i)}
-      class="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+      class="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ring-2 ring-brand-500"
     >
       <img
         src={image.src}

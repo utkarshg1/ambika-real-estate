@@ -54,7 +54,7 @@
   {#each images as image, i (image.src)}
     <button
       onclick={() => open(i)}
-      class="overflow-hidden rounded-xl bg-gray-100 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 aspect-square"
+      class="overflow-hidden rounded-xl bg-gray-100 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 aspect-square ring-2 ring-brand-500"
       aria-label="View {image.label}"
     >
       <img

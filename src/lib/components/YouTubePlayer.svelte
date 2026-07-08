@@ -1,9 +1,10 @@
 <script lang="ts">
-  let { videoId, title, vertical = false, class: className = '' }: {
+  let { videoId, title, vertical = false, class: className = '', thumbnailSrc }: {
     videoId: string;
     title: string;
     vertical?: boolean;
     class?: string;
+    thumbnailSrc?: string;
   } = $props();
 
   let playing = $state(false);
@@ -14,11 +15,11 @@
 
   let aspectClass = $derived(vertical ? 'aspect-[9/16] max-h-[80vh] mx-auto' : 'aspect-video');
   let thumbnailFit = $derived(vertical ? 'object-contain bg-gray-900' : 'object-cover');
-  let thumbnailUrl = $derived(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+  let thumbnailUrl = $derived(thumbnailSrc ?? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
   let embedUrl = $derived(`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&rel=0&modestbranding=1`);
 </script>
 
-<div class="relative rounded-2xl overflow-hidden bg-gray-900 {className} {aspectClass}">
+<div class="relative rounded-2xl overflow-hidden bg-gray-900 ring-2 ring-brand-500 {className} {aspectClass}">
   {#if playing}
     <iframe
       src={embedUrl}
